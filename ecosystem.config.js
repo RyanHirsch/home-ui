@@ -16,7 +16,7 @@ module.exports = {
 
       "post-setup": "/home/pi/src/home-ui/source/scripts/install-deps.sh",
 
-      "post-deploy": "yarn install && yarn build && yarn start",
+      "post-deploy": "yarn install && yarn build",
     },
   },
 };
