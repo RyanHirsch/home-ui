@@ -8,6 +8,8 @@ TIMESTAMP=`date +%Y%m%d-%H:%M:%S`
 DATE=`date +%Y%m%d`
 
 cd "${PROJECT_DIR}"
+  echo "${TIMESTAMP} Checking for updates" >> "${PROJECT_DIR}/${DATE}.log"
+
 git fetch
 
 LOCAL_CURRENT=$(git rev-parse HEAD | cut -c1-10)
