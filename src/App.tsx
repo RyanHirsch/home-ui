@@ -1,28 +1,44 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Reload from "./components/Reload";
+import { Grommet, Box, Heading, Grid } from "grommet";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import Door from "./components/Door";
+import Time from "./components/Time";
+
+const theme = {
+  global: {
+    font: {
+      family: "Roboto",
+      size: "24px",
+      height: "26px",
+    },
+  },
+};
+
+function App() {
+  return (
+    <Grommet theme={theme}>
+      <Box
+        tag="header"
+        background="brand"
+        pad="small"
+        elevation="small"
+        justify="between"
+        direction="row"
+        align="center"
+        flex={false}
+      >
+        <Heading level={"3"} margin="none">
+          <Time />
+        </Heading>
+        <Reload />
+      </Box>
+      <Grid gap="large" margin="medium" columns={["flex", "flex"]}>
+        <Door />
+        <Door />
+      </Grid>
+    </Grommet>
+  );
 }
 
 export default App;
