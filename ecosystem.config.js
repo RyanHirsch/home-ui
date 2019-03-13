@@ -14,6 +14,8 @@ module.exports = {
       repo: "https://github.com/RyanHirsch/home-ui.git",
       path: "/home/pi/src/home-ui",
 
+      "post-setup": "/home/pi/src/home-ui/source/scripts/install-deps.sh",
+
       "post-deploy": "yarn install && yarn build && yarn start",
     },
   },
